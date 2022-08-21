@@ -116,8 +116,7 @@ public class App {
 		try {
 			su.connect(serial);
 			if (full) {
-				log
-						.info("Setting Full Output On - frequency and signal strength");
+				log.info("Setting Full Output On - frequency and signal strength");
 				su.setFullOutputOn();
 			}
 		} catch (java.lang.Exception e) {

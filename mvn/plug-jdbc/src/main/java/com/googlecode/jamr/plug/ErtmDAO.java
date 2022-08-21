@@ -55,8 +55,8 @@ public class ErtmDAO {
 
 	public void insertErt(
 			com.googlecode.jamr.model.EncoderReceiverTransmitterMessage ert) {
-		jdbcTemplate.update(insertStatement, new Object[]{ert.getSerial(),
-				ert.getDate(), ert.getReading()});
+		jdbcTemplate.update(insertStatement,
+				new Object[]{ert.getSerial(), ert.getDate(), ert.getReading()});
 	}
 
 	public int verify() {

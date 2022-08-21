@@ -64,23 +64,6 @@ public class SerialUtils {
 
 	public boolean connect(String portName) throws Exception {
 
-		if (os.equals("Windows 7")) {
-			log.debug("Going to use Winjcom");
-			com.engidea.comm.CommPortIdentifier portIdentifier = new com.engidea.win32jcom.WinjcomIdentifier(
-					0);
-			com.engidea.comm.CommPort aPort = portIdentifier
-					.getCommPort(portName);
-			aPort.open();
-			com.engidea.comm.SerialPort serport = (com.engidea.comm.SerialPort) aPort;
-
-			sr = new WinSerialReader(serport);
-			((WinSerialReader) sr).setRunning(true);
-			Thread winThread = new Thread((WinSerialReader) sr);
-			winThread.start();
-
-			return true;
-		}
-
 		CommPortIdentifier portIdentifier = CommPortIdentifier
 				.getPortIdentifier(portName);
 		if (portIdentifier.isCurrentlyOwned()) {

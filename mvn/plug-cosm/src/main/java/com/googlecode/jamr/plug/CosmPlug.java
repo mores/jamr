@@ -94,7 +94,8 @@ public class CosmPlug implements com.googlecode.jamr.spi.Outlet {
 								.dateTime();
 						String csv = fmt.print(org.joda.time.LocalDateTime
 								.fromDateFields(ert.getDate()))
-								+ "," + ert.getReading() + "\n";
+								+ ","
+								+ ert.getReading() + "\n";
 						log.debug("csv: " + csv);
 
 						org.apache.http.HttpResponse response = null;

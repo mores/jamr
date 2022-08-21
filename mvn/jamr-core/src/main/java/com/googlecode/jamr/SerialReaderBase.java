@@ -62,7 +62,7 @@ abstract class SerialReaderBase {
 	}
 
 	public void doWork(String line) {
-		//log.trace( "-" + line + "-" );
+		// log.trace( "-" + line + "-" );
 		java.util.regex.Matcher matcher = pattern.matcher(line);
 		if (matcher.matches()) {
 			String message = matcher.group(1);
@@ -111,8 +111,7 @@ abstract class SerialReaderBase {
 		// Now we have computed the delta
 
 		if (scm == null) {
-			log
-					.trace("The original was not sent, not sending custom feeds either");
+			log.trace("The original was not sent, not sending custom feeds either");
 			return;
 		}
 
@@ -169,7 +168,7 @@ abstract class SerialReaderBase {
 			os.received(scm);
 			lastReading.put(serial, scm);
 		} else {
-			//getTime returns miliseconds
+			// getTime returns miliseconds
 			scm.setDeltaReading(scm.getReading().subtract(old.getReading()));
 			scm.setDeltaSeconds((scm.getDate().getTime() - old.getDate()
 					.getTime()) / 1000);

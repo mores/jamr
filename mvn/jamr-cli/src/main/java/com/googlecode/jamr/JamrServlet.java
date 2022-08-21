@@ -56,7 +56,7 @@ public class JamrServlet extends javax.servlet.http.HttpServlet {
 						+ andWhere;
 				log.info("SQL: " + sql);
 				java.sql.PreparedStatement ps = conn.prepareStatement(sql);
-				//ps.setString( 1, guid );
+				// ps.setString( 1, guid );
 				java.sql.ResultSet rs = ps.executeQuery();
 				while (rs.next()) {
 					java.util.Hashtable record = new java.util.Hashtable();
